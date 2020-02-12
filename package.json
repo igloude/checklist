@@ -1,0 +1,19 @@
+{
+  "name": "checklist",
+  "version": "0.1.0",
+  "description": "A checklist CLI application to reduce human error during critical tasks",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igloude/checklist.git"
+  },
+  "author": "Ian Gloude",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/igloude/checklist/issues"
+  },
+  "homepage": "https://github.com/igloude/checklist#readme"
+}
