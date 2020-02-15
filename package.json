@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/igloude/checklist/issues"
   },
-  "homepage": "https://github.com/igloude/checklist#readme"
+  "homepage": "https://github.com/igloude/checklist#readme",
+  "dependencies": {
+    "js-yaml": "3.13.1"
+  }
 }
