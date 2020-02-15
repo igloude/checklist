@@ -1,0 +1,13 @@
+# checklist mock
+title: "Read-Do Checlist Test"
+type: "read-do"
+list:
+  1:
+    title: "First checklist item"
+    status: false
+  2:
+    title: "Second checklist item"
+    status: false
+  3:
+    title: "Third checklist item"
+    status: false
