@@ -1,6 +1,6 @@
 --- # read-do checklist mock
-title: "Read-Do Checlist Test"
-type: "read-do"
+title: "Read-Do"
+type: "r-d"
 list:
   1:
     title: "First checklist item"
@@ -13,8 +13,8 @@ list:
     status: false
 
 --- # do-confirm checklist mock
-title: "Do-Confirm Checlist Test"
-type: "do-confirm"
+title: "Do-Confirm"
+type: "d-c"
 list:
   1:
     title: "First checklist item"

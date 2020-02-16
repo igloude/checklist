@@ -1,4 +1,5 @@
-var chalk = require("chalk"),
+var _ = require("lodash"),
+  chalk = require("chalk"),
   clear = require("clear"),
   figlet = require("figlet"),
   fs = require("fs"),
@@ -19,32 +20,36 @@ figlet("Checklist", function(err, fig) {
 function promptChecklistName() {
   prompt.get(["checklist"], function(err, result) {
     var list = result.checklist;
-
-    console.log("result.checklist:");
     console.log(list);
 
     if (list != null) {
-      getChecklist("./__mocks__/data.yaml");
+      // TODO - update this with user's checklist yaml file
+      getChecklist("./__mocks__/data.yaml", list);
     } else {
-      restart();
+      console.log(err);
+      restart(list);
     }
   });
 }
 
-function getChecklist(file) {
+function getChecklist(file, list) {
   try {
     let fileContents = fs.readFileSync(file, "utf8");
     let data = yaml.safeLoadAll(fileContents);
+    let listIndex = _.findIndex(data, { title: list });
 
-    printer(data);
-  } catch (e) {
-    console.log(e);
+    printer(data[listIndex]);
+  } catch {
     restart();
   }
 }
 
-function restart() {
-  console.log("Please enter a valid checklist name.");
+function restart(list) {
+  console.log(
+    'The checklist "' +
+      list +
+      '" has not been created. Please enter a valid checklist title.'
+  );
   console.log("");
   promptChecklistName();
 }
@@ -52,8 +57,8 @@ function restart() {
 function printer(data) {
   clear();
   console.log(art);
-  console.log(chalk.inverse(data[1].title));
-  console.log(data);
+  console.log(chalk.inverse(" " + data.title + ": "));
+  console.log(data.list);
 }
 
 // checkItem() {
