@@ -56,5 +56,11 @@ function printer(data) {
   console.log(data);
 }
 
+// checkItem() {
+//   read current checklist
+//   find fist 'list' item with status === false
+//   set status = true
+// }
+
 prompt.start();
 promptChecklistName();
