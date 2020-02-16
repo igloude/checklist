@@ -4,7 +4,7 @@ type: "r-d"
 list:
   1:
     title: "First checklist item"
-    status: false
+    status: true
   2:
     title: "Second checklist item"
     status: false
@@ -16,12 +16,12 @@ list:
 title: "Do-Confirm"
 type: "d-c"
 list:
-  1:
+  0:
     title: "First checklist item"
     status: false
-  2:
+  1:
     title: "Second checklist item"
     status: false
-  3:
+  2:
     title: "Third checklist item"
     status: false
