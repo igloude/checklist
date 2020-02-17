@@ -27,7 +27,7 @@ function promptChecklistName() {
       getChecklist("./__mocks__/data.yaml", listInputName);
     } else {
       console.log(err);
-      restart(listInputName);
+      invalidChecklistTitle(listInputName);
     }
   });
 }
@@ -40,11 +40,11 @@ function getChecklist(file, listTitle) {
 
     printer(list);
   } catch {
-    restart(listTitle);
+    invalidChecklistTitle(listTitle);
   }
 }
 
-function restart(list) {
+function invalidChecklistTitle(list) {
   console.log(
     'The checklist "' +
       list +
@@ -80,6 +80,17 @@ function printer(data) {
 //   read current checklist
 //   find fist 'list' item with status === false
 //   set status = true
+//   if final item, listCompleted()
+// }
+
+// listCompleted() {
+//   console.log complete message
+//   resetList()
+// }
+
+// resetList() {
+//   read current checklist
+//   set all items to status: flase
 // }
 
 prompt.start();
