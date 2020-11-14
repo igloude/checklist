@@ -8,7 +8,7 @@ var _ = require("lodash"),
 
 var art;
 
-figlet("Checklist", function(err, fig) {
+figlet("Checklist", function (err, fig) {
   if (err) {
     console.log("Something went wrong with figlet...");
     console.dir(err);
@@ -18,7 +18,7 @@ figlet("Checklist", function(err, fig) {
 });
 
 function promptChecklistName() {
-  prompt.get(["checklist"], function(err, result) {
+  prompt.get(["checklist"], function (err, result) {
     var listInputName = result.checklist;
     console.log(listInputName);
 
@@ -55,23 +55,23 @@ function invalidChecklistTitle(list) {
 }
 
 function printer(data) {
-  var currentToDoIndex = _.findKey(data.list, function(o) {
+  var currentToDoIndex = _.findKey(data.list, function (o) {
     return o.status == false;
   });
 
   clear();
   console.log(art);
   console.log(chalk.white(" " + data.title + ": "));
-  _.each(data.list, function(item, i) {
+  _.each(data.list, function (item, i) {
     if (item.status === true) {
       // done
-      console.log(chalk.white.bgBlackBright(item.title));
+      console.log(chalk.gray.bold(item.title));
     } else if (item.status === false && i === currentToDoIndex) {
       // current todo
-      console.log(chalk.black.bgGreen(item.title));
+      console.log(chalk.white.bold.bgBlue(item.title));
     } else {
       // future todo
-      console.log(chalk.black.bgRed(item.title));
+      console.log(chalk.gray.bold(item.title));
     }
   });
 }

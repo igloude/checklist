@@ -18,10 +18,10 @@ type: "d-c"
 list:
   0:
     title: "First checklist item"
-    status: false
+    status: true
   1:
     title: "Second checklist item"
-    status: false
+    status: true
   2:
     title: "Third checklist item"
     status: false
